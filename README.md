@@ -25,3 +25,4 @@ Set these records to **DNS only** (grey cloud) until GitHub issues the certifica
 - Check records: `dig adarshthapa.info.np +short`
 - Redirect loop with Cloudflare proxy: set SSL/TLS mode to Full.
 # My_profile
+# My_profile
