@@ -1,0 +1,12 @@
+document.documentElement.classList.add('js');
+const $=s=>document.querySelector(s),nav=$('#nav'),menu=$('#menu'),burger=$('#burger'),top=$('#top');
+burger.onclick=()=>{const o=burger.getAttribute('aria-expanded')!=='true';burger.setAttribute('aria-expanded',o);burger.setAttribute('aria-label',o?'Close menu':'Open menu');menu.classList.toggle('open',o)};
+menu.querySelectorAll('a').forEach(a=>a.onclick=()=>{menu.classList.remove('open');burger.setAttribute('aria-expanded','false')});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&menu.classList.contains('open')){menu.classList.remove('open');burger.setAttribute('aria-expanded','false');burger.focus()}});
+const sc=()=>{nav.classList.toggle('scrolled',scrollY>20);top.classList.toggle('show',scrollY>700)};sc();addEventListener('scroll',sc,{passive:true});
+top.onclick=()=>scrollTo({top:0});
+$('#yr').textContent=new Date().getFullYear();
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');io.unobserve(e.target)}}),{threshold:.15});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+const links=[...menu.querySelectorAll('a')],so=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)links.forEach(l=>l.classList.toggle('on',l.getAttribute('href')==='#'+e.target.id))}),{rootMargin:'-45% 0px -50% 0px'});
+document.querySelectorAll('main section[id]').forEach(s=>so.observe(s));
