@@ -24,3 +24,4 @@ Set these records to **DNS only** (grey cloud) until GitHub issues the certifica
 - Certificate pending: wait up to ~1 hour; remove and re-add the custom domain.
 - Check records: `dig adarshthapa.info.np +short`
 - Redirect loop with Cloudflare proxy: set SSL/TLS mode to Full.
+# My_profile
